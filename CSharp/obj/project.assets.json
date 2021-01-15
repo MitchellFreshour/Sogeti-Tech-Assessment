@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Projects\\Tech-Asses\\tech-assessment\\CSharp\\CSharp.csproj",
+      "projectUniqueName": "C:\\Users\\qoy965\\Documents\\tech-assess\\Sogeti-Tech-Assessment\\CSharp\\CSharp.csproj",
       "projectName": "CSharp",
-      "projectPath": "C:\\Projects\\Tech-Asses\\tech-assessment\\CSharp\\CSharp.csproj",
+      "projectPath": "C:\\Users\\qoy965\\Documents\\tech-assess\\Sogeti-Tech-Assessment\\CSharp\\CSharp.csproj",
       "packagesPath": "C:\\Users\\qoy965\\.nuget\\packages\\",
-      "outputPath": "C:\\Projects\\Tech-Asses\\tech-assessment\\CSharp\\obj\\",
+      "outputPath": "C:\\Users\\qoy965\\Documents\\tech-assess\\Sogeti-Tech-Assessment\\CSharp\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

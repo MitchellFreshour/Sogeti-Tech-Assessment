@@ -9,20 +9,20 @@ using Microsoft.Extensions.Logging;
 namespace CSharp.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
-    public class OrdersController : ControllerBase
+    [Route("test")]
+    public class OrdersController : Controller
     {
-        private readonly IOrderService _orderService;
+        private readonly IOrdersService _orderService;
 
         private readonly int Failure = -1;
 
         public OrdersController(
-            IOrderService orderService)
+            IOrdersService orderService)
         {
             _orderService = orderService;
         }
 
-        [HttpPost]
+        [HttpPost("create")]
         public string CreateOrder(int CustomerId, List<int> ProductIds)
         {
             var result = _orderService.CreateOrder(CustomerId, ProductIds);
@@ -34,7 +34,7 @@ namespace CSharp.Controllers
             return $"Failed to create Order";
         }
 
-        [HttpPost]
+        [HttpPut("update")]
         public string UpdateOrder(int OrderId, List<int> ProductIds)
         {
             var result = _orderService.UpdateOrder(OrderId, ProductIds);
@@ -46,7 +46,7 @@ namespace CSharp.Controllers
             return $"Failed to update Order {OrderId}";
         }
 
-        [HttpDelete]
+        [HttpDelete("delete")]
         public string CancelOrder(int OrderId)
         {
             var result = _orderService.CancelOrder(OrderId);
@@ -56,7 +56,7 @@ namespace CSharp.Controllers
             return $"Cancelled Order {OrderId} Sucessfully!";
         }
 
-        [HttpGet]
+        [HttpGet("list")]
         public List<int> ListOrders(int CustomerId)
         {
             var result = _orderService.ListOrders(CustomerId);

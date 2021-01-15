@@ -12,7 +12,7 @@ namespace CSharp.Services
         public List<int> ProductIds { get; set; }
     }
 
-    public interface IOrderService
+    public interface IOrdersService
     {
         int CreateOrder(int CustomerId, List<int> ProductIds);
 
@@ -23,7 +23,7 @@ namespace CSharp.Services
         List<int> ListOrders(int CustomerId);
     }
 
-    public class OrdersService : IOrderService
+    public class OrdersService : IOrdersService
     {
         // This is a substitue to an actual database, and I cannot us
         private IList<OrderModel> orders;

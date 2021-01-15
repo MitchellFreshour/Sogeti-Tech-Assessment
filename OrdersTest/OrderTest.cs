@@ -7,7 +7,7 @@ namespace OrdersTest
 {
     public class OrderTest
     {
-        private IOrderService ordersService;
+        private IOrdersService ordersService;
 
         private OrderModel Order1 = new OrderModel
         {
