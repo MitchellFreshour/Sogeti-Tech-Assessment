@@ -22,8 +22,8 @@ namespace CSharp.Controllers
             _orderService = orderService;
         }
 
-        [HttpPost("create")]
-        public string CreateOrder(int CustomerId, List<int> ProductIds)
+        [HttpPost("create/{CustomerId}")]
+        public string CreateOrder(int CustomerId, [FromBody] List<int> ProductIds)
         {
             var result = _orderService.CreateOrder(CustomerId, ProductIds);
             if (result != Failure)
@@ -34,8 +34,8 @@ namespace CSharp.Controllers
             return $"Failed to create Order";
         }
 
-        [HttpPut("update")]
-        public string UpdateOrder(int OrderId, List<int> ProductIds)
+        [HttpPut("update/{OrderId}")]
+        public string UpdateOrder(int OrderId, [FromBody] List<int> ProductIds)
         {
             var result = _orderService.UpdateOrder(OrderId, ProductIds);
             if (result != Failure)
@@ -46,17 +46,18 @@ namespace CSharp.Controllers
             return $"Failed to update Order {OrderId}";
         }
 
-        [HttpDelete("delete")]
+        [HttpDelete("delete/{OrderId}")]
         public string CancelOrder(int OrderId)
         {
             var result = _orderService.CancelOrder(OrderId);
             if (result != Failure)
             {
+                return $"Cancelled Order {OrderId} Sucessfully!";
             }
-            return $"Cancelled Order {OrderId} Sucessfully!";
+            return $"Failed to cancel Order {OrderId}";
         }
 
-        [HttpGet("list")]
+        [HttpGet("list/{CustomerId}")]
         public List<int> ListOrders(int CustomerId)
         {
             var result = _orderService.ListOrders(CustomerId);

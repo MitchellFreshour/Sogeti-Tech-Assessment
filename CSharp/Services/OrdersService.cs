@@ -56,7 +56,7 @@ namespace CSharp.Services
 
         public int UpdateOrder(int OrderId, List<int> ProductIds)
         {
-            var order = orders.First(order => order.OrderId == OrderId);
+            var order = orders.FirstOrDefault(order => order.OrderId == OrderId);
             if (order != null)
             {
                 order.ProductIds = ProductIds;
@@ -69,7 +69,7 @@ namespace CSharp.Services
 
         public int CancelOrder(int OrderId)
         {
-            var orderToDelete = orders.First(order => order.OrderId == OrderId);
+            var orderToDelete = orders.FirstOrDefault(order => order.OrderId == OrderId);
             if (orderToDelete != null)
             {
                 orders.Remove(orderToDelete);
